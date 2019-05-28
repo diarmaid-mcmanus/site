@@ -1,0 +1,25 @@
+server {
+	listen 0.0.0.0:80;
+	server_name diarmaidmcmanus.com www.diarmaidmcmanus.com;
+	rewrite ^ https://$host$request_uri? permanent;
+}
+
+server {
+	listen 443 default_server;
+	listen [::]:443 default_server;
+
+	root /var/www/diarmaidmcmanus.com;
+
+	index index.html;
+
+	server_name diarmaidmcmanus.com www.diarmaidmcmanus.com;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+	ssl on;
+
+	ssl_certificate /etc/letsencrypt/live/diarmaidmcmanus.com/fullchain.pem;
+	ssl_certificate_key /etc/letsencrypt/live/diarmaidmcmanus.com/privkey.pem;
+}
