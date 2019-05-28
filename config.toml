@@ -1,3 +1,54 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseurl = "//www.diarmaidmcmanus.com"
+title = "Diarmaid McManus"
+theme = "pulp"
+canonifyurls = true
+hasCJKLanguage = true
+
+[taxonomies]
+  series = "series"
+
+[params]
+    author = "Diarmaid McManus"
+    avatar = "avatar.jpg"
+    favicon = "avatar.jpg"
+    description = """
+	Security Engineer interested in Bug Bounty, automation, and static analysis.
+    """
+    publicationYear = "2019"
+
+[outputs]
+    section = ["JSON", "HTML"]
+
+[[menu.main]]
+    identifier = "blog"
+    # name = "Blog" #If display text link, cancel comment out
+    pre = "<i class='fa fa-book-open fa-lg'></i>" #Choose your favorite font from Font Awesome
+    url = "/blog/"
+    weight = 10
+
+[[menu.main]]
+    identifier = "twitter"
+    # name = "Twitter"
+    pre = "<i class='fab fa-twitter fa-lg'></i>"
+    url = "https://twitter.com/ItsDiarmaid"
+    weight = 20
+
+[[menu.main]]
+    identifier = "github"
+    # name = "GitHub"
+    pre = "<i class='fab fa-github fa-lg'></i>"
+    url = "https://github.com/diarmaid-mcmanus"
+    weight = 30
+
+[[menu.main]]
+    identifier = "email"
+    # name = "Email"
+    pre = "<i class='fa fa-envelope fa-lg'></i>"
+    url = "mailto:diarmaidmcmanus@gmail.com"
+    weight = 40
+
+[[menu.main]]
+	identifier = "linkedin"
+	pre = "<i class='fab fa-linkedin fa-lg'></i>"
+	url = "https://www.linkedin.com/in/diarmaidmcmanus/"
+	weight = 50
