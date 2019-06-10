@@ -6,6 +6,7 @@ title: "Old Talks & Articles"
 
  My first ever Security talk was on the [BSides London 2013 Rookie Track](https://www.securitybsides.org.uk/April2013/rookies.html).	
 
+
  ## Posts & Interviews	
 
  Jan 24, 2019 - [Riot Games Surpassess 1,000 Valid Reports: Q&A on HackerOne.com](https://www.hackerone.com/blog/Riot-Games-Surpasses-1000-Valid-Reports-QA)	
