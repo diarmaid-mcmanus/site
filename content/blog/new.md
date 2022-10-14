@@ -10,7 +10,7 @@ This is my first time using TPot in a year or so, and I just learned of the dps.
 
 Cowrie is my current focus. By the time I get to look at its dashboard in Kibana, a few minutes in, the honeypot has already been attacked by 4 unique source IPs. Only one command exec so far, `uname -nm`, but this would change within a few hours. By then, I saw many more commands in cowrie logs, and 3 unique hashes of files attempted download. TODO pulling the session id, searching for the session to recreate the stream, allows you to review full session. is interesting. Viewing the files it's very quick to tell I need a sandbox.
 
-I want to take the downloads and uploaded files, find yara rules for them, and start IDing samples. This would be linked back to greynoise domain rep, VT sample rep, etc. Sandbox too.
+I want to take the downloads and uploaded files, find yara rules for them, and start IDing samples. This would be linked back to greynoise domain rep, VT sample rep, etc. Sandbox too. logstash as an event stream makes this pretty simple to do.
 
 I'm also interested in making my own honeypots, so I will look into wordpot2 some, and dionaea to emulate http(s?) servers. 
 
