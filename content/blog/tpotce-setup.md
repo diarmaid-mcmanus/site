@@ -1,10 +1,14 @@
 ---
-title: "Installing TPotCE"
+title: "TPotCE Setup"
 date: 2022-10-16T15:40:20Z
 draft: false
 ---
 
-Installing TPotCE on a Debian 11 server is very straightforward. [Clone tpotce](https://github.com/telekom-security/tpotce), change the username & password in the config file, and run the installer. I installed early in the evening of October 15th. 
+What is the TPot Honeypot?
+The [TPotCE](https://github.com/telekom-security/tpotce) Honeypot is a collection of simulated services to entice hackers, plus the entire management system needed to run your honeypots and investigate the findings. TPot gives you the tools needed to start capturing threats quickly, and build out your own data processing pipeline to further analyze these threats. Already fantastic at [release](https://github.security.telekom.com/2015/03/honeypot-tpot-concept.html) in 2015, it has come a long way since then.
+
+TPotCE Setup & First Look
+Installing TPot on a Debian 11 server is very straightforward. Clone TPot, change the username & password in the config file, and run the installer. I installed early in the evening of October 15th. 
 
 This is my first time using TPot in a year or so, and I just learned of the dps.sh script. It's a nice overview. The Kibana dashboard seems updated, or more intuitive. I like it. I set up DNS for my honeypot of honeypot.diarmaidmcmanus.com, to make it really clear what's here. I also set rDNS the same way.
 
@@ -14,8 +18,8 @@ Viewing the files, it's very quick to tell I need a sandbox. Most often a small 
 
 After looking through some dashboards other than Cowrie, I've decided I want to correlate all the activity my honeypot sees from each IP address. Especially with the traditional Mirai loader, a multiple server architecture is needed to facilitate fast spreading. I'm curious to see what other bad activity these IPs participate in, and how this activity is spread over time. Then, enrich this with data from [GreyNoise](https://www.greynoise.io/), Shodan, and other platforms.
 
-I also want to take the downloads and uploaded files and run yara rules against them to start IDing samples, upload them to VirusTotal, and detonate them in a sandbox. This could be used to enrich the IP data, including possibly clustering by c2, or at least extracting the c2. Logstash has plenty of [output plugins](https://www.elastic.co/guide/en/logstash/current/output-plugins.html) to make this pretty simple. However, I'm not sure how to integrate this into the TPotCE ecosystem yet.
+I also want to take the downloads and uploaded files and run yara rules against them to start IDing samples, upload them to VirusTotal, and detonate them in a sandbox. This could be used to enrich the IP data, including possibly clustering by c2, or at least extracting the c2. Logstash has plenty of [output plugins](https://www.elastic.co/guide/en/logstash/current/output-plugins.html) to make this pretty simple. However, I'm not sure how to integrate this into the TPot ecosystem yet.
 
-Once I've done with that, I'm also interested in making my own honeypots. I must look into wordpot2 some, and dionaea to emulate http(s?) servers. I'd like to proxy any request that comes into certain paths on my other sites, such as /wp-admin/, to my honeypot. Ideally, this would happen with nginx configuration. I also need to set up proper TLS on my honeypot admin interface via letsencrypt.
+Once I've done with that, I'm also interested in making my own honeypots. I must look into wordpot2 some, and dionaea honeypot to emulate web servers. I'd like to proxy any request that comes into certain paths on my other sites, such as /wp-admin/, to my honeypot. Ideally, this would happen with nginx configuration. I also need to set up proper TLS on my honeypot admin interface via letsencrypt.
 
 Within about 20 hours, I had gained the honeypot tag in shodan. 
